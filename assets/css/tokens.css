@@ -5,121 +5,138 @@
    ============================================================ */
 
 :root {
-  color-scheme: light;
+	color-scheme: light;
 
-  /* ---- Brand identity (from the YEC logo) ---- */
-  --navy-900: #0a1c38;   /* deepest — dark sections, ink */
-  --navy-800: #0c213f;   /* primary ink / heading */
-  --navy-700: #14365f;
-  --navy-600: #1d4a7a;
+	/* ---- Brand identity (from the YEC logo) ---- */
+	--navy-900: #0a1c38; /* deepest — dark sections, ink */
+	--navy-800: #0c213f; /* primary ink / heading */
+	--navy-700: #14365f;
+	--navy-600: #1d4a7a;
 
-  --blue-700: #0d5a98;   /* interactive text / primary button (AA on white) */
-  --blue-600: #1273bb;
-  --blue-500: #2e9bd6;   /* the logo ray blue — accents, highlights */
-  --blue-400: #52b5e0;   /* mid-tone — hover borders, form focus rings */
-  --blue-300: #7cc3ea;
-  --blue-100: #e2f1fb;
+	--blue-700: #0d5a98; /* interactive text / primary button (AA on white) */
+	--blue-600: #1273bb;
+	--blue-500: #2e9bd6; /* the logo ray blue — accents, highlights */
+	--blue-400: #52b5e0; /* mid-tone — hover borders, form focus rings */
+	--blue-300: #7cc3ea;
+	--blue-100: #e2f1fb;
 
-  --sun-500:  #f0a23a;   /* warm sunrise spark — signature, used sparingly */
-  --sun-300:  #f9c877;
+	--sun-500: #f0a23a; /* warm sunrise spark — signature, used sparingly */
+	--sun-300: #f9c877;
 
-  /* ---- Neutrals (cool, tinted toward brand — never cream) ---- */
-  --white:   #ffffff;
-  --paper:   #f4f7fb;   /* page background */
-  --paper-2: #eaf0f7;   /* alt surface */
-  --line:    #d7e0ec;   /* hairlines */
-  --line-2:  #c2d0e0;
+	/* ---- Neutrals (cool, tinted toward brand — never cream) ---- */
+	--white: #ffffff;
+	--paper: #f4f7fb; /* page background */
+	--paper-2: #eaf0f7; /* alt surface */
+	--line: #d7e0ec; /* hairlines */
+	--line-2: #c2d0e0;
 
-  --text:    #19293f;   /* body — ~12:1 on white */
-  --muted:   #4c5e76;   /* secondary — ~6.3:1 on white */
-  --faint:   #5d6f87;   /* captions / meta — AA on white (~4.8:1) */
+	--text: #19293f; /* body — ~12:1 on white */
+	--muted: #4c5e76; /* secondary — ~6.3:1 on white */
+	--faint: #5d6f87; /* captions / meta — AA on white (~4.8:1) */
 
-  /* ---- Semantic ---- */
-  --bg:        var(--paper);
-  --surface:   var(--white);
-  --ink:       var(--navy-800);
-  --heading:   var(--navy-800);
-  --link:      var(--blue-700);
-  --on-dark:   rgba(255,255,255,.92);
-  --on-dark-2: rgba(255,255,255,.66);
-  --focus:     var(--blue-500);
-  --mist:      rgba(13, 90, 152, 0.06);
+	/* ---- Semantic ---- */
+	--bg: var(--paper);
+	--surface: var(--white);
+	--ink: var(--navy-800);
+	--heading: var(--navy-800);
+	--link: var(--blue-700);
+	--on-dark: rgba(255, 255, 255, 0.92);
+	--on-dark-2: rgba(255, 255, 255, 0.66);
+	--focus: var(--blue-500);
+	--mist: rgba(13, 90, 152, 0.06);
 
-  /* ---- Signature gradients ---- */
-  --scrim-hero: linear-gradient(180deg, rgba(8,22,44,.62) 0%, rgba(8,22,44,.35) 22%, rgba(8,22,44,.55) 48%, rgba(8,22,44,.90) 100%);
-  --scrim-side: linear-gradient(90deg, rgba(8,22,44,.78) 0%, rgba(8,22,44,.45) 45%, rgba(8,22,44,0) 80%);
-  --grad-navy:  linear-gradient(165deg, #0c213f 0%, #0a1c38 55%, #11315a 100%);
-  --grad-sun:   linear-gradient(90deg, var(--sun-500), var(--sun-300));
+	/* ---- Signature gradients ---- */
+	--scrim-hero: linear-gradient(
+		180deg,
+		rgba(8, 22, 44, 0.62) 0%,
+		rgba(8, 22, 44, 0.35) 22%,
+		rgba(8, 22, 44, 0.55) 48%,
+		rgba(8, 22, 44, 0.9) 100%
+	);
+	--scrim-side: linear-gradient(90deg, rgba(8, 22, 44, 0.78) 0%, rgba(8, 22, 44, 0.45) 45%, rgba(8, 22, 44, 0) 80%);
+	--grad-navy: linear-gradient(165deg, #0c213f 0%, #0a1c38 55%, #11315a 100%);
+	--grad-sun: linear-gradient(90deg, var(--sun-500), var(--sun-300));
 
-  /* ---- Type ---- */
-  --f-display: "Archivo", "Segoe UI", system-ui, sans-serif;
-  --f-body:    "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --f-mono:    "IBM Plex Mono", ui-monospace, "Cascadia Code", monospace;
+	/* ---- Type ---- */
+	--f-display: "Archivo", "Segoe UI", system-ui, sans-serif;
+	--f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+	--f-mono: "IBM Plex Mono", ui-monospace, "Cascadia Code", monospace;
 
-  /* Fluid scale — mobile-first, clamps up */
-  --fs-hero:  clamp(2.6rem, 1.5rem + 5.2vw, 5.5rem);
-  --fs-h1:    clamp(2.1rem, 1.5rem + 2.7vw, 3.5rem);
-  --fs-h2:    clamp(1.7rem, 1.3rem + 1.9vw, 2.7rem);
-  --fs-h3:    clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
-  --fs-h4:    clamp(1.1rem, 1rem + 0.4vw, 1.25rem);
-  --fs-lead:  clamp(1.075rem, 1rem + 0.45vw, 1.3rem);
-  --fs-body:  1rem;
-  --fs-sm:    0.9rem;
-  --fs-xs:    0.78rem;
-  --fs-mono:  0.74rem;
+	/* Fluid scale — mobile-first, clamps up */
+	--fs-hero: clamp(2.6rem, 1.5rem + 5.2vw, 5.5rem);
+	--fs-h1: clamp(2.1rem, 1.5rem + 2.7vw, 3.5rem);
+	--fs-h2: clamp(1.7rem, 1.3rem + 1.9vw, 2.7rem);
+	--fs-h3: clamp(1.25rem, 1.05rem + 0.9vw, 1.6rem);
+	--fs-h4: clamp(1.1rem, 1rem + 0.4vw, 1.25rem);
+	--fs-lead: clamp(1.075rem, 1rem + 0.45vw, 1.3rem);
+	--fs-body: 1rem;
+	--fs-sm: 0.9rem;
+	--fs-xs: 0.78rem;
+	--fs-mono: 0.74rem;
 
-  --lh-tight:  1.04;
-  --lh-snug:   1.18;
-  --lh-body:   1.62;
+	--lh-tight: 1.04;
+	--lh-snug: 1.18;
+	--lh-body: 1.62;
 
-  --ls-display: -0.025em;   /* floor is -0.04em; stay comfortable */
-  --ls-mono:    0.10em;
+	--ls-display: -0.025em; /* floor is -0.04em; stay comfortable */
+	--ls-mono: 0.1em;
 
-  /* ---- Spacing (8px rhythm) ---- */
-  --s-1: 0.25rem; --s-2: 0.5rem;  --s-3: 0.75rem; --s-4: 1rem;
-  --s-5: 1.5rem;  --s-6: 2rem;    --s-7: 2.5rem;  --s-8: 3rem;
-  --s-9: 4rem;    --s-10: 5rem;   --s-11: 6.5rem; --s-12: 8.5rem;
+	/* ---- Spacing (8px rhythm) ---- */
+	--s-1: 0.25rem;
+	--s-2: 0.5rem;
+	--s-3: 0.75rem;
+	--s-4: 1rem;
+	--s-5: 1.5rem;
+	--s-6: 2rem;
+	--s-7: 2.5rem;
+	--s-8: 3rem;
+	--s-9: 4rem;
+	--s-10: 5rem;
+	--s-11: 6.5rem;
+	--s-12: 8.5rem;
 
-  /* ---- Layout — the consistent left/right "deadzone" ---- */
-  --container: 1240px;
-  --container-text: 760px;
-  --gutter: clamp(1.25rem, 5vw, 4rem);
-  --section-y: clamp(4.5rem, 3rem + 7vw, 9rem);
-  --section-y-sm: clamp(3rem, 2rem + 4vw, 5rem);
+	/* ---- Layout — the consistent left/right "deadzone" ---- */
+	--container: 1240px;
+	--container-text: 760px;
+	--gutter: clamp(1.25rem, 5vw, 4rem);
+	--section-y: clamp(4.5rem, 3rem + 7vw, 9rem);
+	--section-y-sm: clamp(3rem, 2rem + 4vw, 5rem);
 
-  /* ---- Radius — restrained (cards 12–16, pills for tags) ---- */
-  --r-sm: 4px;
-  --r-md: 6px;
-  --r-lg: 8px;
-  --r-btn: 8px;
-  --r-pill: 999px;
+	/* ---- Radius — restrained (cards 12–16, pills for tags) ---- */
+	--r-sm: 4px;
+	--r-md: 6px;
+	--r-lg: 8px;
+	--r-btn: 8px;
+	--r-pill: 999px;
 
-  /* ---- Shadow — one defined scale, no ghost-card pairing ---- */
-  --sh-1: 0 1px 2px rgba(10,28,56,.07);
-  --sh-2: 0 8px 24px -14px rgba(10,28,56,.30);
-  --sh-3: 0 26px 60px -30px rgba(10,28,56,.45);
-  --sh-blue: 0 18px 40px -20px rgba(13,90,152,.55);
+	/* ---- Shadow — one defined scale, no ghost-card pairing ---- */
+	--sh-1: 0 1px 2px rgba(10, 28, 56, 0.07);
+	--sh-2: 0 8px 24px -14px rgba(10, 28, 56, 0.3);
+	--sh-3: 0 26px 60px -30px rgba(10, 28, 56, 0.45);
+	--sh-blue: 0 18px 40px -20px rgba(13, 90, 152, 0.55);
 
-  /* ---- Motion ---- */
-  --e-out: cubic-bezier(0.16, 1, 0.3, 1);     /* ease-out-expo-ish */
-  --e-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
-  --d-1: 0.2s;
-  --d-2: 0.45s;
-  --d-3: 0.8s;
+	/* ---- Motion ---- */
+	--e-out: cubic-bezier(0.16, 1, 0.3, 1); /* ease-out-expo-ish */
+	--e-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+	--d-1: 0.2s;
+	--d-2: 0.45s;
+	--d-3: 0.8s;
 
-  /* ---- Z-index scale ---- */
-  --z-base: 1;
-  --z-sticky: 50;
-  --z-header: 100;
-  --z-drawer: 200;
-  --z-modal: 300;
+	/* ---- Z-index scale ---- */
+	--z-base: 1;
+	--z-sticky: 50;
+	--z-header: 100;
+	--z-drawer: 200;
+	--z-modal: 300;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .001ms !important;
-    scroll-behavior: auto !important;
-  }
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
 }
