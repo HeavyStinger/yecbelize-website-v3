@@ -29,16 +29,28 @@
       drawer.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
       if (open && M && !reduce) {
-        M.animate(links,
+        const anim = M.animate(links,
           { opacity: [0, 1], transform: ['translateY(14px)', 'translateY(0px)'] },
           { delay: M.stagger(0.05, { start: 0.08 }), duration: 0.5, easing: [0.16, 1, 0.3, 1] }
         );
+        /* Motion.dev commits opacity:1 as inline style — clear it so CSS rules take over */
+        const done = anim?.finished;
+        if (done && typeof done.then === 'function') {
+          done.then(() => links.forEach(a => (a.style.opacity = '')));
+        }
       }
     };
     toggle.addEventListener('click', () => set(toggle.getAttribute('aria-expanded') !== 'true'));
     $$('a', drawer).forEach(a => a.addEventListener('click', () => set(false)));
     addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
     addEventListener('resize', () => { if (innerWidth >= 1000) set(false); });
+    /* Mark the active drawer link based on current URL */
+    const path = location.pathname;
+    $$('a', drawer).forEach(a => {
+      const isExact = a.pathname === path;
+      const isParent = a.pathname.endsWith('projects.html') && /\/projects\//.test(path);
+      if (isExact || isParent) a.setAttribute('aria-current', 'page');
+    });
   }
 
   /* ---- Reveal on scroll ---- */
@@ -170,6 +182,18 @@
       ));
     }
   }
+
+  /* ---- Expandable person bios ---- */
+  $$('.person__toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!wrap) return;
+      const open = wrap.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      wrap.setAttribute('aria-hidden', String(!open));
+      btn.querySelector('.toggle-text').textContent = open ? 'Close' : 'Read bio';
+    });
+  });
 
   /* ---- Spring hover on project tiles & service rows (whileHover) ---- */
   if (M && !reduce && matchMedia('(pointer:fine)').matches) {

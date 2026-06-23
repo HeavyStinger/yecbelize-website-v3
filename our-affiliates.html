@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -45,9 +45,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="assets/css/tokens.css?v=9" />
-  <link rel="stylesheet" href="assets/css/style.css?v=9" />
-  <link rel="stylesheet" href="assets/css/pages.css?v=9" />
+  <link rel="stylesheet" href="assets/css/tokens.css?v=11" />
+  <link rel="stylesheet" href="assets/css/style.css?v=11" />
+  <link rel="stylesheet" href="assets/css/pages.css?v=11" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -97,21 +97,24 @@
             <div class="person__photo"><span class="pin">Architecture</span><img src="assets/img/yec/affiliates/Sumathi Courtenay.jpg" alt="Sumathi Courtenay" loading="lazy" width="221" height="141" /></div>
             <h2 class="person__name">Sumathi Courtenay</h2>
             <p class="person__role">B.Arch, M.APAB · Architect</p>
-            <p class="person__bio">A leading architect in Belize and Principal of Vividarch Company Ltd. Sumathi and YEC have teamed up on several landmark projects, including the Fort Point Pedestrian Walk and the Grand Heritage Villas at Coco Beach. She holds a Bachelor of Architecture from the Southern California Institute of Architecture and an MBA from the University of the West Indies.</p>
+            <div class="person__bio-wrap" id="bio-1" aria-hidden="true"><p class="person__bio">A leading architect in Belize and Principal of Vividarch Company Ltd. Sumathi and YEC have teamed up on several landmark projects, including the Fort Point Pedestrian Walk and the Grand Heritage Villas at Coco Beach. She holds a Bachelor of Architecture from the Southern California Institute of Architecture and an MBA from the University of the West Indies.</p></div>
+            <button class="person__toggle" aria-expanded="false" aria-controls="bio-1"><span class="toggle-text">Read bio</span><svg class="chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </article>
 
           <article class="person" data-reveal data-d="1">
             <div class="person__photo"><span class="pin">Hydraulics</span><img src="assets/img/yec/affiliates/Lucien Chung.jpg" alt="Lucien Chung" loading="lazy" width="221" height="141" /></div>
             <h2 class="person__name">Lucien Chung, P.E.</h2>
             <p class="person__role">Civil Engineer · Hydraulics</p>
-            <p class="person__bio">A civil engineer specializing in water, wastewater, drainage and environmental engineering. Lucien holds a bachelor's in civil engineering from the University of the West Indies and a master's in Hydrology for Environmental Management from the University of London — Imperial College, with extensive experience in Jamaica and Belize.</p>
+            <div class="person__bio-wrap" id="bio-2" aria-hidden="true"><p class="person__bio">A civil engineer specializing in water, wastewater, drainage and environmental engineering. Lucien holds a bachelor's in civil engineering from the University of the West Indies and a master's in Hydrology for Environmental Management from the University of London — Imperial College, with extensive experience in Jamaica and Belize.</p></div>
+            <button class="person__toggle" aria-expanded="false" aria-controls="bio-2"><span class="toggle-text">Read bio</span><svg class="chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </article>
 
           <article class="person" data-reveal data-d="2">
             <div class="person__photo"><span class="pin">Geotechnical</span><img src="assets/img/yec/affiliates/Hector Paiz.jpg" alt="Hector Paiz" loading="lazy" width="221" height="141" /></div>
             <h2 class="person__name">Hector Paiz</h2>
             <p class="person__role">Ing. Civ. · Geotechnical &amp; Highway</p>
-            <p class="person__bio">Hector provides geotechnical expertise — field testing &amp; sampling, laboratory testing, and the design of pavements &amp; foundations in complex subsurface conditions. He brings some 30 years of experience, a bachelor's in civil engineering from the University of San Carlos, Guatemala, and a master's in soil mechanics, bridges &amp; highways from the University of Kumamoto, Japan.</p>
+            <div class="person__bio-wrap" id="bio-3" aria-hidden="true"><p class="person__bio">Hector provides geotechnical expertise — field testing &amp; sampling, laboratory testing, and the design of pavements &amp; foundations in complex subsurface conditions. He brings some 30 years of experience, a bachelor's in civil engineering from the University of San Carlos, Guatemala, and a master's in soil mechanics, bridges &amp; highways from the University of Kumamoto, Japan.</p></div>
+            <button class="person__toggle" aria-expanded="false" aria-controls="bio-3"><span class="toggle-text">Read bio</span><svg class="chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           </article>
         </div>
       </div>
@@ -164,12 +167,12 @@
       </div>
       <div class="foot-bottom">
         <span>© <span data-year>2026</span> Young's Engineering Consultancy Ltd.</span>
-        <span>17.50°N 88.20°W · Belize City</span>
+        <a class="foot-location" href="https://maps.app.goo.gl/GYTU2MndnLyCdFzL7" target="_blank" rel="noopener">828 Coney Drive, Belize City</a>
       </div>
     </div>
   </footer>
 
-  <script defer src="assets/js/vendor/motion.umd.js?v=9"></script>
-  <script defer src="assets/js/main.js?v=9"></script>
+  <script defer src="assets/js/vendor/motion.umd.js?v=11"></script>
+  <script defer src="assets/js/main.js?v=11"></script>
 </body>
 </html>
