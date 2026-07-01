@@ -137,52 +137,6 @@
 		);
 	}
 
-	/* ---- Contact form → mailto (no backend on a static site) ---- */
-	const form = $("#contactForm");
-	if (form) {
-		const clearErrors = () =>
-			$$(".field__error", form).forEach((el) => {
-				el.textContent = "";
-			});
-		form.addEventListener("submit", (e) => {
-			e.preventDefault();
-			clearErrors();
-			const note = $("#formNote");
-			if (!form.checkValidity()) {
-				const bad = form.querySelector(":invalid");
-				if (bad) {
-					const errEl = document.getElementById(bad.id + "Err");
-					const msg = bad.validity.valueMissing
-						? "This field is required."
-						: bad.validity.typeMismatch
-							? `Please enter a valid ${bad.type}.`
-							: bad.validationMessage;
-					if (errEl) errEl.textContent = msg;
-					if (note) note.textContent = "Please fix the highlighted field above.";
-					bad.focus();
-				}
-				return;
-			}
-			const data = new FormData(form);
-			const subject = `Project enquiry — ${data.get("subject")}`;
-			const body =
-				`Name: ${data.get("name")}\n` +
-				`Email: ${data.get("email")}\n` +
-				`Project type: ${data.get("subject")}\n\n` +
-				`${data.get("message")}\n`;
-			location.href = `mailto:info@yecbelize.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-			if (note)
-				note.textContent = "Opening your email app… if nothing happens, email info@yecbelize.com directly.";
-		});
-		/* Clear inline error as soon as the user starts correcting a field */
-		$$("input, textarea, select", form).forEach((el) => {
-			el.addEventListener("input", () => {
-				const errEl = document.getElementById(el.id + "Err");
-				if (errEl) errEl.textContent = "";
-			});
-		});
-	}
-
 	/* ---- Subtle hero parallax (pointer) ---- */
 	const heroMedia = $(".hero__media img");
 	if (heroMedia && !reduce && matchMedia("(pointer:fine)").matches) {

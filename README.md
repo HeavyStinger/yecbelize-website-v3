@@ -23,7 +23,7 @@ Google Maps embed prefer http.)
 
 ## Structure
 ```
-claude design/
+root/
 ├── *.html                      # top-level pages
 ├── projects/*.html             # project detail pages
 └── assets/

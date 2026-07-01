@@ -305,7 +305,9 @@
 
 					<div data-reveal data-d="1">
 						<h2 style="font-size: var(--fs-h3)">Send us a message</h2>
-						<form class="form" id="contactForm" style="margin-top: var(--s-6)" novalidate>
+						<form class="form" id="contactForm" style="margin-top: var(--s-6)" method="POST" novalidate>
+							<!-- Public safe API key -->
+							<input type="hidden" name="access_key" value="acf107ab-d147-49d9-a29c-ea9f727e3372">
 							<div class="row2">
 								<div class="field">
 									<label for="name">Name</label>
@@ -350,6 +352,7 @@
 									required></textarea>
 								<p class="field__error" id="messageErr" role="alert"></p>
 							</div>
+							<div class="h-captcha" data-captcha="true"></div>
 							<button class="btn" type="submit" style="justify-self: start">
 								Send Message
 								<svg
@@ -367,10 +370,7 @@
 										stroke-linejoin="round" />
 								</svg>
 							</button>
-							<p class="form__note" id="formNote" aria-live="polite">
-								This opens your email app addressed to info@yecbelize.com — or call us directly at
-								+501-223-2072.
-							</p>
+							<p class="form__note" id="formNote" aria-live="polite"></p>
 						</form>
 					</div>
 				</div>
@@ -456,7 +456,9 @@
 			</div>
 		</footer>
 
+		<script defer src="assets/js/contact.js?v=12"></script>
 		<script defer src="assets/js/vendor/motion.umd.js?v=12"></script>
 		<script defer src="assets/js/main.js?v=12"></script>
+		<script src="https://web3forms.com/client/script.js" async defer></script>
 	</body>
 </html>
